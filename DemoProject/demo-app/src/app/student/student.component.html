@@ -1,0 +1,8 @@
+{{age}}
+<!-- <button (click) = "onClick()">Child</button> -->
+
+
+
+<p>{{studentObject.name}} </p>
+<button class="btn btn-primary"[class.active] = "isActive" *ngIf="studentObject.age >25" >Pass</button>
+<button class="btn btn-danger"[class.active] = "isActive" *ngIf="studentObject.age == 25" >Fail</button>

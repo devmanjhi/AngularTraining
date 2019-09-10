@@ -1,0 +1,10 @@
+Git project transfer without node module
+
+e2e end to end
+
+package.json
+build commands
+dependencies
+
+package-lock.json
+

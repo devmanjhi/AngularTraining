@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+       
+        
+        <script>
+
+        obj = {
+            a:20,
+            func1:function() {
+                console.log(this);
+            },
+            innerObj: {
+                b:30,
+                func2: function() {
+                    console.log(this);
+                },
+                func3: function() {
+                    setInterval(function(){
+                        console.log(this);
+                    },1000);
+                },
+                func4: function() {
+                    setInterval(function(){
+                        console.log(this);
+                    },1000);
+                }
+            }
+        };
+
+        obj.func1();
+        obj.innerObj.func2();
+        obj.innerObj.func3();
+        obj.innerObj.func4();
+
+
+
+            
+            
+            </script>
+       
+    </body>
+</html>

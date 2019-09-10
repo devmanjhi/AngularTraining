@@ -1,0 +1,42 @@
+<html>
+    <h1> Pipes </h1>
+        {{ courseObj.title | uppercase}} <br/>
+        {{ courseObj.rating | number: "2.1-1"}} <br/>
+        {{ courseObj.students | number}} <br/>
+        {{ courseObj.price | currency:"INR"}} 
+        
+    <h2>Custom Pipes</h2>
+
+    {{largetext | summary}}
+    {{titletext | titleCase}}
+
+    <h2 [textContent]="title"> </h2>
+    <img src = "{{imgUrl}}">
+
+    
+    <br>
+    <button class="btn btn-primary"[class.active] = "isActive" >Button</button>
+    <div (click)="onDivClicked($event)">    
+        <button (click) = "onSave($event)" >Event Button</button>
+        <input #email (keyup.enter) = "onInputClicked(email.value)"/>
+
+        <input [(ngModel)] = "email2" (keyup.enter)="onInput2Clicked()"/>
+        //email
+        {{email2    }}
+    </div>
+    <button (click) = "onClick">ABC</button>
+
+    <!-- <app-student [age] = 45 (changeEvent)="parentchild()"> </app-student> -->
+    
+        <div *ngFor="let jsonSingleData of jsonData">
+            <app-student [studentObject] = "jsonSingleData" > </app-student> 
+        </div>
+
+        <button (click) = "displayJsonDataFromService()">DisplayJsonData</button>
+
+        <li *ngFor="let data of jsonData" class="jumbotron">
+                {{ data.title }}
+                <button (click) = "deletePost(data.title)">DeleteJsonData</button>
+        </li>
+  
+</html>
